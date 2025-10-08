@@ -1,0 +1,36 @@
+body {
+    padding: 20px;
+}
+
+#form {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#form label {
+    margin: 10px;
+}
+
+#form input {
+    padding: 5px;
+    margin: 10px;
+    outline: none;
+}
+
+#form button {
+    padding: 8px;
+}
+
+table {
+    border-collapse: none;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #333;
+    padding: 10px;
+}
+
+div {
+    margin-top: 20px;
+}
