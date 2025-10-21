@@ -1,16 +1,22 @@
+let descuento = 0;
+const DESCUENTO_WELCOME = 0.10;
+const DESCUENTO_SUMMER = 0.05;
 
+const descuentos = {
+    'SUMMER': DESCUENTO_SUMMER,
+    'WELCOME': DESCUENTO_WELCOME,
+    'DEFAULT': 0
+    };
 
-function doCalc(productos, codigoDescuento) {
+function doCalc(productos, codigoDescuento = '') {
     let total = 0;
     const IMPUESTO = 0.10;
-
-    for (let i = 0; i < productos.length; i++) {
-        let item = productos[i];
-        total += item.price;
-    }
+    //suma del precio de todos los productos
+    total = productos.reduce((acumulador, valor) => {
+        return acumulador + valor.price
+    }, 0);
 
     comprobarDescuento(codigoDescuento);
-
 
     let precioConDescuento = total * (1 - descuento);
     let impuestoCalculado = precioConDescuento * IMPUESTO;
@@ -24,18 +30,8 @@ const listaPrecios = [
     { price: 25 }
 ];
 
-let descuento = 0;
-const DESCUENTO_WELCOME = 0.10;
-const DESCUENTO_SUMMER = 0.05;
-
 function comprobarDescuento(codigoDescuento) {
-    if (codigoDescuento === 'WELCOME') {
-        descuento = DESCUENTO_WELCOME;
-    }
-    if (codigoDescuento === 'SUMMER') {
-        descuento = DESCUENTO_SUMMER;
-    }
+    descuento = descuentos[codigoDescuento] || descuentos['DEFAULT'];
 }
-
 
 console.log("Precio Sucio:", doCalc(listaPrecios, 'WELCOME'));

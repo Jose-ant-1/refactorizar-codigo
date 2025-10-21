@@ -39,6 +39,7 @@ function calcularPrecioProductos(order) {
         total += item.price * item.quantity * IMPUESTO; // 15% de impuesto incluido
     }
     return total;
+
 }
 
 // Ejemplo de uso:
