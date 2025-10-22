@@ -8,7 +8,7 @@ const descuentos = {
     'DEFAULT': 0
     };
 
-function doCalc(productos, codigoDescuento = '') {
+export function doCalc(productos, codigoDescuento = '') {
     let total = 0;
     const IMPUESTO = 0.10;
     //suma del precio de todos los productos
@@ -24,13 +24,13 @@ function doCalc(productos, codigoDescuento = '') {
     return impuestoCalculado + precioConDescuento;
 }
 
-const listaPrecios = [
+export const listaPrecios = [
     { price: 100 },
     { price: 50 },
     { price: 25 }
 ];
 
-function comprobarDescuento(codigoDescuento) {
+export function comprobarDescuento(codigoDescuento) {
     descuento = descuentos[codigoDescuento] || descuentos['DEFAULT'];
 }
 
