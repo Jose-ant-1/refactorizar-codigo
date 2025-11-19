@@ -1,3 +1,5 @@
+
+
 function calcTotal(order) {
     let total = 0;
 
